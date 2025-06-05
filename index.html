@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="./main.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #050f17;
+      overflow: hidden;
+    }
+
+ 
+    @font-face {
+  font-family: 'MyCustomFont';
+  src: url('../assets/fonts/Conthrax-SemiBold.otf') format('truetype'); /* Adjust the path */
+  font-weight: normal;
+  font-style: normal;
+}
+
+#endScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  color: #02effb;
+  font-family: 'MyCustomFont';
+  
+}
+
+.end-content {
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  background: #111;
+  border: 2px solid #02effb;
+}
+
+.end-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: #02effb;
+  text-shadow:  0 0 1.5px #00f6ff, 0 0 3px #00f6ff, 0 0 5px #00e1ff, 0 0 10px #00e1ff;
+}
+
+.end-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.end-content button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: black;
+  background-color: orange;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.end-content button:hover {
+  background-color: #ff9900;
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="endScreen" style="display: none;">
+    <div class="end-content">
+      <h1>Well Done!!</h1>
+      <p>Use the item to send this message to yourself from the future - don't loose it!</p>
+      <!-- <button onclick="location.reload()">Play Again</button> -->
+    </div>
+  </div>
+
+</body>
+</html>

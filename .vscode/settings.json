@@ -1,0 +1,11 @@
+{
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.https": {
+      "enable": true,
+      "cert": "D:/Mediapipe/face_mesh/https/localhost.pem",
+      "key": "D:/Mediapipe/face_mesh/https/localhost.key",
+      "passphrase": "sarahingis97"
+    }
+  }
