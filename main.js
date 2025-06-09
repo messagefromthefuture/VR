@@ -1,6 +1,6 @@
 import * as THREE from './libs/three.js-r132/build/three.module.js';
-import { ARButton } from '../../libs/three.js-r132/examples/jsm/webxr/ARButton.js';
-import { RGBELoader } from '../../libs/three.js-r132/examples/jsm/loaders/RGBELoader.js';
+import { ARButton } from './libs/three.js-r132/examples/jsm/webxr/ARButton.js';
+import { RGBELoader } from './libs/three.js-r132/examples/jsm/loaders/RGBELoader.js';
 import { loadGLTF } from './libs/loader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadHDR = async () => {
       const hdrLoader = new RGBELoader();
       try {
-        const texture = await hdrLoader.loadAsync('../../assets/hdr/studio.hdr');
+        const texture = await hdrLoader.loadAsync('./assets/hdr/studio.hdr');
         texture.mapping = THREE.EquirectangularReflectionMapping;
         scene.environment = texture;
         scene.background = null;
@@ -306,9 +306,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       playExplosionSound() {
         const sounds = [
-          '../../assets/audio/firework_01.mp3',
-          '../../assets/audio/firework_01.mp3',
-          '../../assets/audio/firework_01.mp3'
+          './assets/audio/firework_01.mp3',
+          './assets/audio/firework_01.mp3',
+          './assets/audio/firework_01.mp3'
         ];
         
         const sound = new Audio(sounds[Math.floor(Math.random() * sounds.length)]);
@@ -401,8 +401,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let chestAnimationAction;
 
     try {
-      chestModel = await loadGLTF('../../assets/models/chest.glb');
-      secondModel = await loadGLTF('../../assets/models/Place_Object.glb');
+      chestModel = await loadGLTF('./assets/models/chest.glb');
+      secondModel = await loadGLTF('./assets/models/Place_Object.glb');
       
       if (chestModel.animations && chestModel.animations.length > 0) {
         chestAnimationClip = chestModel.animations[0];
@@ -431,15 +431,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Load audio
-    const chestOpenSound = new Audio('../../assets/audio/chest_open_2.mp3'); 
+    const chestOpenSound = new Audio('./assets/audio/chest_open_2.mp3'); 
     chestOpenSound.preload = 'auto'; 
     chestOpenSound.volume = 1.0;
 
-    const rewardSound = new Audio('../../assets/audio/celebration.mp3');
+    const rewardSound = new Audio('./assets/audio/celebration.mp3');
     rewardSound.preload = 'auto';
     rewardSound.volume = 1.0;
 
-    const victorySound = new Audio('../../assets/audio/victory_3.mp3');
+    const victorySound = new Audio('./assets/audio/victory_3.mp3');
     victorySound.preload = 'auto';
     victorySound.volume = 1.0;
     //victorySound.loop = true;
@@ -505,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!chestClone) return;
 
       // Create a coin geometry
-      var texture = new THREE.TextureLoader().load('../../assets/textures/aztec.jpg');
+      var texture = new THREE.TextureLoader().load('./assets/textures/aztec.jpg');
       
       const coinGeometry = new THREE.CylinderGeometry(0.5, 0.5, 0.05, 100);
       
