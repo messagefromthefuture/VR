@@ -5,7 +5,7 @@ class ARButton {
 		const button = document.createElement( 'button' );
 
 		const title = document.createElement('div');
-title.textContent = 'WELCOME TO ESCAPE AR';
+title.textContent = 'WELCOME TO THE VIRTUAL REALITY';
 title.style.position = 'absolute';
 title.style.top = '25%';
 title.style.left = '50%';
@@ -89,7 +89,7 @@ document.body.appendChild(subtitle);
 
 				await renderer.xr.setSession( session );
 
-				button.textContent = 'Exit AR';
+				button.textContent = 'Exit VR';
 				sessionInit.domOverlay.root.style.display = '';
 
 				currentSession = session;
@@ -100,7 +100,7 @@ document.body.appendChild(subtitle);
 
 				currentSession.removeEventListener( 'end', onSessionEnded );
 
-				button.textContent = 'Enter AR';
+				button.textContent = 'Enter VR';
 				sessionInit.domOverlay.root.style.display = 'none';
 
 				currentSession = null;
@@ -115,7 +115,7 @@ document.body.appendChild(subtitle);
 			button.style.left = 'calc(50% - 100px)';
 			button.style.width = '200px';
 
-			button.textContent = 'Enter AR';
+			button.textContent = 'Enter VR';
 
 			button.onmouseenter = function () {
 
@@ -167,7 +167,7 @@ document.body.appendChild(subtitle);
 
 			disableButton();
 
-			button.textContent = 'AR NOT SUPPORTED';
+			button.textContent = 'VR NOT SUPPORTED';
 
 		}
 
