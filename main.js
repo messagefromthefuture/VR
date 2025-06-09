@@ -1,4 +1,4 @@
-import * as THREE from '../../libs/three.js-r132/build/three.module.js';
+import * as THREE from './libs/three.js-r132/build/three.module.js';
 import { ARButton } from '../../libs/three.js-r132/examples/jsm/webxr/ARButton.js';
 import { RGBELoader } from '../../libs/three.js-r132/examples/jsm/loaders/RGBELoader.js';
 import { loadGLTF } from './libs/loader.js';
@@ -442,6 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const victorySound = new Audio('../../assets/audio/victory_3.mp3');
     victorySound.preload = 'auto';
     victorySound.volume = 1.0;
+    //victorySound.loop = true;
 
     const playChestAnimation = () => {
       if (!chestClone || !chestAnimationClip) return;
@@ -480,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //victorySound.currentTime = 0;
         //victorySound.play();
         document.getElementById('endScreen').style.display = 'flex';
-      }, 19000);
+      }, 25000);
     };
 
     const showRewardEffect = () => {
@@ -617,13 +618,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const placeModels = (position) => {
       if (!modelPlaced && chestModel && secondModel) {
         chestClone = chestModel.scene.clone();
-        chestClone.position.set(0, -1.5, 2.8);
+        chestClone.position.set(0, -1.5, 3.5 );
         chestClone.scale.set(0.7, 0.7, -0.7);
         applyHDRToChest(chestClone);
         scene.add(chestClone);
 
         secondClone = secondModel.scene.clone();
-        secondClone.position.set(0, 0.7, -2);
+        secondClone.position.set(0, 0.6, -2);
         secondClone.scale.set(0.17, 0.17, 0.17);
         scene.add(secondClone);
 
